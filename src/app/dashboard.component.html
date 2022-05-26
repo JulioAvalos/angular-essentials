@@ -1,0 +1,7 @@
+<div class="dashboard-container">
+  <!-- <p>{{ loadState }}</p> -->
+  <!-- alternative way to bind -->
+  <p [textContent]="loadState"></p>
+  <button class="btn btn-primary" (click)="onSwitchState()">Switch State</button>
+  <input type="text" [(ngModel)]="loadState" />
+</div>

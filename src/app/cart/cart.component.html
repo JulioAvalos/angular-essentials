@@ -1,0 +1,36 @@
+<div class="container m-5">
+  <h6>Cart component</h6>
+
+  <div class="d-flex flex-row mb-3">
+    <div class="pe-2">
+      <input class="form-control" type="text" [(ngModel)]="newItem" />
+    </div>
+
+    <div class="ps-2">
+      <button
+        class="btn"
+        [ngClass]="{
+          'btn-primary': newItem !== '',
+          'btn-light': newItem === ''
+        }"
+        (click)="onAddItem()"
+      >
+        Add Item
+      </button>
+    </div>
+  </div>
+
+  <p *ngIf="newItem === ''">Please enter a value!</p>
+
+  <hr>
+
+  <ul class="list-group">
+    <li
+      class="list-group-item"
+      *ngFor="let item of items; let i = index"
+      [ngStyle]="{ backgroundColor: i % 2 === 0 ? 'yellow' : 'blue' }"
+    >
+      {{ item }}
+    </li>
+  </ul>
+</div>

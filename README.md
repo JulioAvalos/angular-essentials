@@ -1,9 +1,10 @@
 # Angular Essential App
 
-Proyecto en angular 13 para repasar conceptos claves
+Proyecto en Angular 13 para repasar conceptos claves
 
-### Comando para hacer el despliegue:
+### Comandos para ejecutar proyecto:
 
 ```bash
+npm install
 npm run start
 ```

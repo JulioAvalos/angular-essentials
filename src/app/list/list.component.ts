@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-list',
@@ -6,12 +6,10 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./list.component.scss'],
 })
 export class ListComponent implements OnInit {
-  characters = [
-    { name: 'Luke Skywaler', side: '' },
-    { name: 'Darth Vader', side: '' },
-  ];
+  @Input() characters: any;
 
   constructor() {}
 
   ngOnInit(): void {}
+
 }

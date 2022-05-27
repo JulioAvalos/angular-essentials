@@ -1,8 +1,11 @@
-
-  <li class="list-group-item active">
-    <p>{{character}}</p>
-    <div>
-      <button class="btn btn-primary">Light</button>
-      <button class="btn btn-danger">Dark</button>
+<li class="list-group-item">
+  <p>{{character?.name}}</p>
+  <div class="d-flex flex-row">
+    <div class="p-2">
+      <button class="btn btn-primary" (click)="onAssign('light')">Light</button>
     </div>
-  </li>
+    <div class="p-2"> 
+      <button class="btn btn-danger" (click)="onAssign('dark')">Dark</button>
+    </div>
+  </div>
+</li>

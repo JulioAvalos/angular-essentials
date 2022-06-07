@@ -1,7 +1,8 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
-import { RouterModule } from '@angular/router';
+import { RouterModule } from '@angular/router'
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
 import { UserComponent } from './user/user.component';
@@ -14,7 +15,7 @@ import { ListComponent } from './list/list.component';
 import { StarWarsService } from './services/star-wars.service';
 import { LogService } from './services/log.service';
 import { CreateCharacterComponent } from './create-character/create-character.component';
-import { HeaderComponent } from './header/header.component';
+import { HeaderComponent } from './header/header.component'
 
 const routes = [
   {
@@ -22,7 +23,7 @@ const routes = [
     component: TabsComponent,
     children: [
       { path: '', redirectTo: 'all', pathMatch: 'full' },
-      { path: ':side', component: ListComponent }
+      { path: ':side', component: ListComponent },
     ],
   },
   {
@@ -48,7 +49,12 @@ const routes = [
     CreateCharacterComponent,
     HeaderComponent,
   ],
-  imports: [BrowserModule, FormsModule, RouterModule.forRoot(routes)],
+  imports: [
+    BrowserModule,
+    FormsModule,
+    RouterModule.forRoot(routes),
+    HttpClientModule,
+  ],
   providers: [StarWarsService, LogService],
   bootstrap: [AppComponent],
 })
